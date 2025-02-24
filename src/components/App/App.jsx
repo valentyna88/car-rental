@@ -3,8 +3,7 @@ import HomePage from '../../pages/HomePage/HomePage';
 import CatalogPage from '../../pages/CatalogPage/CatalogPage';
 import CarDetailsPage from '../../pages/CarDetailsPage/CarDetailsPage';
 import NotFoundPage from '../../pages/NotFoundPage/NotFoundPage';
-import Layout from '../Layout';
-import './App.module.css';
+import Layout from '../Layout/Layout';
 
 const App = () => {
   return (
