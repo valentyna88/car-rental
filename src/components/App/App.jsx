@@ -1,7 +1,7 @@
 import './App.module..css';
 
-function App() {
+const App = () => {
   return <></>;
-}
+};
 
 export default App;
