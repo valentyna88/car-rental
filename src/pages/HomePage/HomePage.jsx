@@ -4,7 +4,7 @@ import css from './HomePage.module.css';
 const HomePage = () => {
   return (
     <section className={css.hero}>
-      <div className={css.container}>
+      <div className={css.content}>
         <h1 className={css.title}>Find your perfect rental car</h1>
         <p className={css.text}>
           Reliable and budget-friendly rentals for any journey
