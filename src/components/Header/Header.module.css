@@ -1,0 +1,19 @@
+.header {
+  border-bottom: 1px solid #f2f4f7;
+  background-color: #f2f4f7;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 24px 120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  display: block;
+  width: 104px;
+  height: 16px;
+}

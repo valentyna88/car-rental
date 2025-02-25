@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className={css.header}>
       <div className={css.container}>
-        <Link href="/" className={css.logo}>
+        <Link to="/" className={css.logo}>
           <svg className={css.icon}>
             <use href="/src/assets/icons/symbol-defs.svg#icon-logo"></use>
           </svg>
