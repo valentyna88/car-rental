@@ -7,6 +7,7 @@ import {
   selectError,
   selectIsLoading,
 } from '../../redux/cars/selectors';
+import CarDetails from '../CarCard/CarCard';
 
 const CarList = () => {
   const dispatch = useDispatch();
@@ -34,10 +35,7 @@ const CarList = () => {
     <ul className={css.carList}>
       {cars.map(car => (
         <li key={car.id} className={css.carItem}>
-          <img src={car.img} alt={car.model} className={css.carImage} />
-          <h3>{car.img}</h3>
-          <p>{car.model}</p>
-          <p>{car.price} EUR/day</p>
+          <CarDetails car={car} />
         </li>
       ))}
     </ul>
