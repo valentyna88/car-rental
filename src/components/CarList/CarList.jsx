@@ -1,5 +1,5 @@
 const CarList = () => {
-  return <div>CarList</div>;
+  return <p>Loading cars...</p>;
 };
 
 export default CarList;
