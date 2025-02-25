@@ -28,4 +28,4 @@ const carsSlice = createSlice({
   },
 });
 
-export default carsSlice.reducer;
+export const carsReducer = carsSlice.reducer;
