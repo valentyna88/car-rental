@@ -17,9 +17,6 @@ const CarCard = ({ car }) => {
     rentalCompany,
   } = car;
 
-  const shortAddress = getShortAddress(address);
-  const formattedMileage = formatMileage(mileage);
-
   return (
     <>
       <div className={css.carImageContainer}>
@@ -38,10 +35,10 @@ const CarCard = ({ car }) => {
           </div>
         </div>
         <p className={css.location}>
-          {shortAddress} | {rentalCompany} |
+          {getShortAddress(address)} | {rentalCompany} |
         </p>
         <p className={css.details}>
-          {type} | {formattedMileage} km
+          {type} | {formatMileage(mileage)} km
         </p>
       </div>
       <Link to={`${id}`} className={css.link}>
