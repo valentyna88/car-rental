@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import css from './CarCard.module.css';
 import sprite from '../../assets/icons/sprite.svg';
+import { formatMileage, getShortAddress } from '../../utils/utils';
 
 const CarCard = ({ car }) => {
   const {
@@ -16,11 +17,8 @@ const CarCard = ({ car }) => {
     rentalCompany,
   } = car;
 
-  const addressParts = address.split(',');
-  const shortAddress = addressParts.slice(-2).join(' | ');
-  const formattedMileage = mileage
-    .toString()
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+  const shortAddress = getShortAddress(address);
+  const formattedMileage = formatMileage(mileage);
 
   return (
     <>
