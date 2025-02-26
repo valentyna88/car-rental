@@ -1,0 +1,8 @@
+.carList {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(276px, 1fr)); */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin-top: 56px;
+  margin-bottom: 80px;
+}
