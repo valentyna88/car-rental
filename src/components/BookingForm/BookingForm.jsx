@@ -54,41 +54,54 @@ const BookingForm = () => {
       <p className={css.text}>
         Stay connected! We are always ready to help you.
       </p>
-
       <Formik
         initialValues={initialValues}
         validationSchema={ValidationSchema}
         onSubmit={handleSubmit}
       >
-        {({ values, setFieldValue, isSubmitting }) => (
+        {({ values, setFieldValue, isSubmitting, errors, touched }) => (
           <Form className={css.form} autoComplete="off">
             <Field
-              className={css.field}
+              className={`${css.field} ${
+                errors.name && touched.name ? css.fieldError : ''
+              }`}
               type="text"
               name="name"
               placeholder="Name*"
             />
-            <ErrorMessage name="name" component="span" />
-
+            <ErrorMessage
+              name="name"
+              component="span"
+              className={css.errorMessage}
+            />
             <Field
-              className={css.field}
+              className={`${css.field} ${
+                errors.email && touched.email ? css.fieldError : ''
+              }`}
               type="email"
               name="email"
               placeholder="Email*"
             />
-            <ErrorMessage name="email" component="span" />
-
-            {/* Використання DatePicker */}
+            <ErrorMessage
+              name="email"
+              component="span"
+              className={css.errorMessage}
+            />
             <DatePicker
               selected={values.bookingDate}
               onChange={date => setFieldValue('bookingDate', date)}
               placeholderText="Booking date"
               minDate={new Date()}
               dateFormat="yyyy-MM-dd"
-              className={css.field}
+              className={`${css.field} ${
+                errors.bookingDate && touched.bookingDate ? css.fieldError : ''
+              }`}
             />
-            <ErrorMessage name="bookingDate" component="span" />
-
+            <ErrorMessage
+              name="bookingDate"
+              component="span"
+              className={css.errorMessage}
+            />
             <Field
               className={`${css.field} ${css.lastField}`}
               as="textarea"
@@ -96,7 +109,6 @@ const BookingForm = () => {
               placeholder="Comment"
               style={{ resize: 'none' }}
             />
-
             <button
               className={css.formBtn}
               type="submit"

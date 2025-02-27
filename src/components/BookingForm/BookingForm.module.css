@@ -33,7 +33,7 @@
   border-radius: 12px;
   padding: 12px 20px;
   background-color: #f7f7f7;
-  border: none;
+  border: 1px solid transparent;
   width: 100%;
 }
 
@@ -46,6 +46,19 @@
 
 .lastField {
   margin-bottom: 8px;
+  outline: none;
+  min-height: 88px;
+}
+
+.errorMessage {
+  color: #ef5050;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.fieldError {
+  border-color: #ef5050;
+  color: #ef5050;
 }
 
 .formBtn {
