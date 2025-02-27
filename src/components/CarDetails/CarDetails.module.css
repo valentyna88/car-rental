@@ -1,20 +1,3 @@
-.carDetails {
-  display: flex;
-  gap: 72px;
-}
-.formContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.carImage {
-  border-radius: 19px;
-  width: 640px;
-  height: 512px;
-  margin-top: 84px;
-}
-
 .details {
   display: flex;
   flex-direction: column;

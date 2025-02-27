@@ -1,14 +1,15 @@
 import { useParams } from 'react-router-dom';
-import CarDetails from '../../components/CarDetails/CarDetails';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import BookingForm from '../../components/BookingForm/BookingForm';
+import { fetchCarById } from '../../redux/cars/operations';
 import {
   selectCarDetails,
   selectError,
   selectIsLoading,
 } from '../../redux/cars/selectors';
-import { useEffect } from 'react';
-import { fetchCarById } from '../../redux/cars/operations';
+import CarDetails from '../../components/CarDetails/CarDetails';
+import BookingForm from '../../components/BookingForm/BookingForm';
+import css from './CarDetailsPage.module.css';
 
 const CarDetailsPage = () => {
   const { id } = useParams();
@@ -28,10 +29,13 @@ const CarDetailsPage = () => {
   if (!car) return <p>Car not found</p>;
 
   return (
-    <>
+    <section className={css.carDetails}>
+      <div className={css.formContainer}>
+        <img src={car.img} alt={car.model} className={css.carImage} />
+        <BookingForm />
+      </div>
       <CarDetails car={car} />
-      {/* <BookingForm /> */}
-    </>
+    </section>
   );
 };
 
