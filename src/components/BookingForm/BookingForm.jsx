@@ -1,4 +1,5 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import toast from 'react-hot-toast';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import css from './BookingForm.module.css';
@@ -28,9 +29,23 @@ const BookingForm = () => {
     comment: Yup.string().trim().max(500, 'Comment is too long'),
   });
 
-  const handleSubmit = (values, actions) => {
-    console.log('Form Values:', values);
-    actions.resetForm();
+  const mockPostRequest = values => {
+    return new Promise(resolve => {
+      console.log('Submitted values:', values);
+      setTimeout(() => {
+        resolve({ data: 'Success' });
+      }, 1000);
+    });
+  };
+
+  const handleSubmit = async (values, actions) => {
+    try {
+      await mockPostRequest(values);
+      toast.success('Booking successful!');
+      actions.resetForm();
+    } catch {
+      toast.error('Booking error!');
+    }
   };
 
   return (
@@ -45,7 +60,7 @@ const BookingForm = () => {
         validationSchema={ValidationSchema}
         onSubmit={handleSubmit}
       >
-        {({ isSubmitting }) => (
+        {({ values, setFieldValue, isSubmitting }) => (
           <Form className={css.form} autoComplete="off">
             <Field
               className={css.field}
@@ -63,19 +78,15 @@ const BookingForm = () => {
             />
             <ErrorMessage name="email" component="span" />
 
-            <Field name="bookingDate">
-              {({ field, form }) => (
-                <DatePicker
-                  {...field}
-                  selected={field.value}
-                  onChange={date => form.setFieldValue('bookingDate', date)}
-                  placeholderText="Booking date"
-                  minDate={new Date()}
-                  dateFormat="yyyy-MM-dd"
-                  className={css.field}
-                />
-              )}
-            </Field>
+            {/* Використання DatePicker */}
+            <DatePicker
+              selected={values.bookingDate}
+              onChange={date => setFieldValue('bookingDate', date)}
+              placeholderText="Booking date"
+              minDate={new Date()}
+              dateFormat="yyyy-MM-dd"
+              className={css.field}
+            />
             <ErrorMessage name="bookingDate" component="span" />
 
             <Field
