@@ -1,5 +1,111 @@
+.carDetails {
+  display: flex;
+  gap: 72px;
+}
+
 .carImage {
   border-radius: 19px;
   width: 640px;
   height: 512px;
+  margin-top: 84px;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 488px;
+  margin: 104px 0;
+}
+
+.mainDetails {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 68px;
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: #101828;
+}
+
+.id {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+}
+
+.locationMileageContainer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.locationContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.price {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  color: #3470ff;
+}
+
+.description {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+}
+
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.listTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  margin-bottom: 20px;
+}
+
+.detailsItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  margin-bottom: 16px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
