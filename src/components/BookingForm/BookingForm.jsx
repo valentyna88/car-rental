@@ -1,4 +1,6 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import css from './BookingForm.module.css';
 
 import * as Yup from 'yup';
@@ -20,6 +22,7 @@ const BookingForm = () => {
       .max(50, 'Name is too long'),
     email: Yup.string().required('Email is required').email('Invalid email'),
     bookingDate: Yup.date()
+      .nullable()
       .required('Booking date is required')
       .min(new Date(), 'Select only future date'),
     comment: Yup.string().trim().max(500, 'Comment is too long'),
@@ -60,16 +63,23 @@ const BookingForm = () => {
             />
             <ErrorMessage name="email" component="span" />
 
-            <Field
-              className={css.field}
-              type="date"
-              name="bookingDate"
-              placeholder="Booking date"
-            />
+            <Field name="bookingDate">
+              {({ field, form }) => (
+                <DatePicker
+                  {...field}
+                  selected={field.value}
+                  onChange={date => form.setFieldValue('bookingDate', date)}
+                  placeholderText="Booking date"
+                  minDate={new Date()}
+                  dateFormat="yyyy-MM-dd"
+                  className={css.field}
+                />
+              )}
+            </Field>
             <ErrorMessage name="bookingDate" component="span" />
 
             <Field
-              className={css.field}
+              className={`${css.field} ${css.lastField}`}
               as="textarea"
               name="comment"
               placeholder="Comment"
