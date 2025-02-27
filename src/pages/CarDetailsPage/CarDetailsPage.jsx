@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import CarDetails from '../../components/CarDetails/CarDetails';
 import { useDispatch, useSelector } from 'react-redux';
-import BookingForm from '../../components/BookingForm/BookingForm';
+// import BookingForm from '../../components/BookingForm/BookingForm';
 import {
   selectCarDetails,
   selectError,
@@ -30,7 +30,7 @@ const CarDetailsPage = () => {
   return (
     <>
       <CarDetails car={car} />
-      <BookingForm />
+      {/* <BookingForm /> */}
     </>
   );
 };

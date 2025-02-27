@@ -1,6 +1,7 @@
 import { formatMileage, getShortAddress, shortenId } from '../../utils/utils';
 import sprite from '../../assets/icons/sprite.svg';
 import css from './CarDetails.module.css';
+import BookingForm from '../BookingForm/BookingForm';
 
 const CarDetails = ({ car }) => {
   const {
@@ -25,7 +26,10 @@ const CarDetails = ({ car }) => {
 
   return (
     <section className={css.carDetails}>
-      <img src={img} alt={model} className={css.carImage} />
+      <div className={css.formContainer}>
+        <img src={img} alt={model} className={css.carImage} />
+        <BookingForm />
+      </div>
       <div className={css.details}>
         <div className={css.mainDetails}>
           <div className={css.titleContainer}>

@@ -31,7 +31,7 @@ const BookingForm = () => {
   };
 
   return (
-    <section>
+    <section className={css.formSection}>
       <h4 className={css.title}>Book your car now</h4>
       <p className={css.text}>
         Stay connected! We are always ready to help you.
@@ -44,18 +44,43 @@ const BookingForm = () => {
       >
         {({ isSubmitting }) => (
           <Form className={css.form} autoComplete="off">
-            <Field type="text" name="name" placeholder="Name*" />
+            <Field
+              className={css.field}
+              type="text"
+              name="name"
+              placeholder="Name*"
+            />
             <ErrorMessage name="name" component="span" />
 
-            <Field type="email" name="email" placeholder="Email*" />
+            <Field
+              className={css.field}
+              type="email"
+              name="email"
+              placeholder="Email*"
+            />
             <ErrorMessage name="email" component="span" />
 
-            <Field type="date" name="bookingDate" placeholder="Booking date" />
+            <Field
+              className={css.field}
+              type="date"
+              name="bookingDate"
+              placeholder="Booking date"
+            />
             <ErrorMessage name="bookingDate" component="span" />
 
-            <Field as="textarea" name="comment" placeholder="Comment" />
+            <Field
+              className={css.field}
+              as="textarea"
+              name="comment"
+              placeholder="Comment"
+              style={{ resize: 'none' }}
+            />
 
-            <button type="submit" disabled={isSubmitting}>
+            <button
+              className={css.formBtn}
+              type="submit"
+              disabled={isSubmitting}
+            >
               Send
             </button>
           </Form>
