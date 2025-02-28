@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
-import css from './CarCard.module.css';
-import sprite from '../../assets/icons/sprite.svg';
 import { formatMileage, getShortAddress } from '../../utils/utils';
+import { useDispatch, useSelector } from 'react-redux';
+import { addFavorite, removeFavorite } from '../../redux/favorites/slice';
+import { selectFavorites } from '../../redux/favorites/selectors';
+import sprite from '../../assets/icons/sprite.svg';
+import css from './CarCard.module.css';
 
 const CarCard = ({ car }) => {
   const {
@@ -17,13 +20,40 @@ const CarCard = ({ car }) => {
     rentalCompany,
   } = car;
 
+  const dispatch = useDispatch();
+
+  const favorites = useSelector(selectFavorites);
+
+  const isFavorite = favorites.some(fav => fav.id === id);
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      dispatch(removeFavorite(id));
+    } else {
+      dispatch(addFavorite(car));
+    }
+  };
+
   return (
     <>
       <div className={css.carImageContainer}>
         <img src={img} alt={model} className={css.carImage} />
-        <svg className={css.heartIcon} width={16} height={15}>
-          <use xlinkHref={`${sprite}#icon-heart-white`} />
-        </svg>
+        <button
+          type="button"
+          className={css.favoriteButton}
+          onClick={handleFavoriteClick}
+          aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
+        >
+          <svg className={css.heartIcon} width={16} height={16}>
+            <use
+              xlinkHref={
+                isFavorite
+                  ? `${sprite}#icon-heart-blue`
+                  : `${sprite}#icon-heart-white`
+              }
+            />
+          </svg>
+        </button>
       </div>
       <div className={css.info}>
         <div className={css.titleBox}>

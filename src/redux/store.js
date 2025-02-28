@@ -9,16 +9,16 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-
 import { carsReducer } from './cars/slice';
+import { favoritesReducer } from './favorites/slice';
+import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
   key: 'favorites',
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig);
+const persistedReducer = persistReducer(persistConfig, favoritesReducer);
 
 export const store = configureStore({
   reducer: {
