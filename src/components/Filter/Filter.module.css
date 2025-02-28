@@ -1,0 +1,87 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 84px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8d929a;
+  margin-bottom: 8px;
+}
+
+.select {
+  padding: 12px 16px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: #f7f7f7;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+
+.selectWrapper {
+  display: flex;
+}
+
+.inputContainer {
+  position: relative;
+}
+
+.inputLabel {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #101828;
+  pointer-events: none;
+}
+
+.selectFrom {
+  border-right: 1px solid #dadde1;
+  border-radius: 12px 0 0 12px;
+  width: 160px;
+  padding-left: 52px;
+}
+
+.selectTo {
+  border-radius: 0 12px 12px 0;
+  width: 160px;
+  padding-left: 32px;
+}
+
+.select:focus + .inputLabel,
+.select:not(:placeholder-shown) + .inputLabel {
+  font-size: 10px;
+  top: -5px;
+}
+
+.searchBtn {
+  border-radius: 12px;
+  padding: 12px 51px;
+  width: 156px;
+  background-color: #3470ff;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #ffffff;
+  align-self: flex-end;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.searchBtn:hover {
+  background-color: #0b44cd;
+}

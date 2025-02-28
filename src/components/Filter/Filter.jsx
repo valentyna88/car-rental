@@ -30,47 +30,53 @@ const Filter = () => {
       <Formik initialValues={initialValues} validationSchema={validationSchema}>
         <Form className={css.form} autoComplete="off">
           <div className={css.formGroup}>
-            <label>
+            <label htmlFor="brand" className={css.label}>
               Car brand
-              <Field as="select" name="brand" className={css.select}>
-                <option value="">Choose a brand</option>
-                {brands.map(brand => (
-                  <option key={brand} value={brand}>
-                    {brand}
-                  </option>
-                ))}
-              </Field>
             </label>
+            <Field as="select" name="brand" className={css.select}>
+              <option value="">Choose a brand</option>
+              {brands.map(brand => (
+                <option key={brand} value={brand}>
+                  {brand}
+                </option>
+              ))}
+            </Field>
           </div>
 
           <div className={css.formGroup}>
-            <label>
-              Price/ 1 hour
-              <Field as="select" name="price" className={css.select}>
-                <option value="">Choose a price</option>
-                <option value="0-50">0 - 50</option>
-                <option value="50-100">50 - 100</option>
-                <option value="100-200">100 - 200</option>
-              </Field>
+            <label htmlFor="price" className={css.label}>
+              Price / 1 hour
             </label>
+            <Field as="select" name="price" className={css.select}>
+              <option value="">Choose a price</option>
+              <option value="30">30</option>
+              <option value="40">40</option>
+              <option value="50">50</option>
+            </Field>
           </div>
+
           <div className={css.formGroup}>
-            <label>
-              Car mileage / km
-              <Field
-                type="number"
-                name="mileageFrom"
-                placeholder="From"
-                className={css.input}
-              />
-            </label>
-            <Field
-              type="number"
-              name="mileageTo"
-              placeholder="To"
-              className={css.input}
-            />
+            <label className={css.label}>Car mileage / km</label>
+            <div className={css.selectWrapper}>
+              <div className={css.inputContainer}>
+                <label className={css.inputLabel}>From</label>
+                <Field
+                  type="text"
+                  name="mileageFrom"
+                  className={`${css.select} ${css.selectFrom}`}
+                />
+              </div>
+              <div className={css.inputContainer}>
+                <label className={css.inputLabel}>To</label>
+                <Field
+                  type="text"
+                  name="mileageTo"
+                  className={`${css.select} ${css.selectTo}`}
+                />
+              </div>
+            </div>
           </div>
+
           <button className={css.searchBtn} type="submit">
             Search
           </button>
