@@ -8,6 +8,7 @@ import {
   selectIsLoading,
 } from '../../redux/cars/selectors';
 import CarCard from '../CarCard/CarCard';
+import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 
 const CarList = () => {
   const dispatch = useDispatch();
@@ -32,13 +33,18 @@ const CarList = () => {
   }
 
   return (
-    <ul className={css.carList}>
-      {cars.map(car => (
-        <li key={car.id} className={css.carItem}>
-          <CarCard car={car} />
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className={css.carList}>
+        {cars.map(car => (
+          <li key={car.id} className={css.carItem}>
+            <CarCard car={car} />
+          </li>
+        ))}
+      </ul>
+      <div className={css.btnWrapper}>
+        <LoadMoreBtn />
+      </div>
+    </>
   );
 };
 
