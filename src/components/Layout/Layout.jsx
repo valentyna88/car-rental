@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import Header from '../Header/Header';
-import Loader from '../Loader/Loader';
 import css from './Layout.module.css';
 
 const Layout = () => {
@@ -19,7 +18,7 @@ const Layout = () => {
         }}
       />
       <main className={css.container}>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={null}>
           <Outlet />
         </Suspense>
       </main>

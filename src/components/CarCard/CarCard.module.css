@@ -15,6 +15,10 @@
   top: 16px;
   right: 16px;
 }
+.favoriteButton:hover .heartIcon {
+  stroke: var(--color-button);
+  stroke-width: 2px;
+}
 .info {
   display: flex;
   flex-direction: column;
