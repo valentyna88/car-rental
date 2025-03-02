@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { formatMileage, getShortAddress } from '../../utils/utils';
+import { formatDistance, getShortAddress } from '../../utils/utils';
 import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from '../../redux/favorites/slice';
 import { selectFavorites } from '../../redux/favorites/selectors';
@@ -68,7 +68,7 @@ const CarCard = ({ car }) => {
           {getShortAddress(address)} | {rentalCompany} |
         </p>
         <p className={css.details}>
-          {type} | {formatMileage(mileage)} km
+          {type} | {formatDistance(mileage)} km
         </p>
       </div>
       <Link to={`${id}`} className={css.link}>

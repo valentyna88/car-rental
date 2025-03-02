@@ -7,6 +7,7 @@ import { selectBrands, selectCars } from '../../redux/cars/selectors.js';
 import { validationSchema } from '../../utils/validation.js';
 import sprite from '../../assets/icons/sprite.svg';
 import css from './Filter.module.css';
+import { handleMileageChange } from '../../utils/utils.js';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -150,6 +151,9 @@ const Filter = () => {
                     type="text"
                     name="mileageFrom"
                     className={`${css.select} ${css.selectFrom}`}
+                    onChange={e =>
+                      handleMileageChange(e, setFieldValue, 'mileageFrom')
+                    }
                   />
                 </div>
                 <div className={css.inputContainer}>
@@ -158,6 +162,9 @@ const Filter = () => {
                     type="text"
                     name="mileageTo"
                     className={`${css.select} ${css.selectTo}`}
+                    onChange={e =>
+                      handleMileageChange(e, setFieldValue, 'mileageTo')
+                    }
                   />
                 </div>
               </div>

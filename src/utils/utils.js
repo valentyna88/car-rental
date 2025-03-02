@@ -3,8 +3,17 @@ export const getShortAddress = address => {
   return addressParts.slice(-2).join(', ');
 };
 
-export const formatMileage = mileage => {
+export const formatDistance = mileage => {
   return mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+};
+
+export const formatMileage = value => {
+  return value.replace(/\D/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
+
+export const handleMileageChange = (e, setFieldValue, fieldName) => {
+  const formattedValue = formatMileage(e.target.value);
+  setFieldValue(fieldName, formattedValue);
 };
 
 export const shortenId = (id, length = 4) => {
