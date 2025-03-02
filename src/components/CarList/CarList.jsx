@@ -8,7 +8,6 @@ import {
   selectIsLoading,
 } from '../../redux/cars/selectors';
 import CarCard from '../CarCard/CarCard';
-import LoadMoreBtn from '../LoadMoreBtn/LoadMoreBtn';
 
 const CarList = () => {
   const dispatch = useDispatch();
@@ -41,9 +40,6 @@ const CarList = () => {
           </li>
         ))}
       </ul>
-      <div className={css.btnWrapper}>
-        <LoadMoreBtn />
-      </div>
     </>
   );
 };
