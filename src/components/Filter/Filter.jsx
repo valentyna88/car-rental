@@ -4,17 +4,14 @@ import { useEffect, useState } from 'react';
 import { setFilters } from '../../redux/filters/slice.js';
 import { fetchAllCars, fetchBrands } from '../../redux/cars/operations';
 import { selectBrands, selectCars } from '../../redux/cars/selectors.js';
-// import { selectFilters } from '../../redux/filters/selectors.js';
-import * as Yup from 'yup';
+import { validationSchema } from '../../utils/validation.js';
 import sprite from '../../assets/icons/sprite.svg';
 import css from './Filter.module.css';
 
 const Filter = () => {
   const dispatch = useDispatch();
   const brands = useSelector(selectBrands);
-  // const filters = useSelector(selectFilters);
   const cars = useSelector(selectCars);
-
   const [showBrandDropdown, setShowBrandDropdown] = useState(false);
   const [showPriceDropdown, setShowPriceDropdown] = useState(false);
   const [selectedBrand, setSelectedBrand] = useState('');
@@ -26,21 +23,6 @@ const Filter = () => {
     mileageFrom: '',
     mileageTo: '',
   };
-
-  const validationSchema = Yup.object().shape({
-    brand: Yup.string().optional(),
-    rentalPrice: Yup.number().positive().integer().optional(),
-    mileageFrom: Yup.number().positive().integer().optional(),
-    mileageTo: Yup.number()
-      .positive()
-      .integer()
-      .optional()
-      .when('mileageFrom', (mileageFrom, schema) =>
-        mileageFrom
-          ? schema.min(mileageFrom, 'To must be greater than From')
-          : schema
-      ),
-  });
 
   useEffect(() => {
     dispatch(fetchBrands());

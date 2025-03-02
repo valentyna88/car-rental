@@ -7,7 +7,6 @@ const initialState = {
   carDetails: null,
   isLoading: false,
   error: null,
-  // totalPages: 1,
   totalCars: 0,
   limit: 12,
 };
@@ -16,12 +15,6 @@ const carsSlice = createSlice({
   name: 'cars',
   initialState,
   reducers: {
-    // setPage(state, action) {
-    //   state.currentPage = action.payload;
-    // },
-    // resetPage(state) {
-    //   state.currentPage = 1;
-    // },
     clearCars(state) {
       state.cars = [];
       state.totalCars = 0;

@@ -1,10 +1,9 @@
+import 'react-datepicker/dist/react-datepicker.css';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { BookingSchema } from '../../utils/validation';
 import toast from 'react-hot-toast';
 import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 import css from './BookingForm.module.css';
-
-import * as Yup from 'yup';
 
 const BookingForm = () => {
   const initialValues = {
@@ -13,21 +12,6 @@ const BookingForm = () => {
     bookingDate: '',
     comment: '',
   };
-
-  const ValidationSchema = Yup.object().shape({
-    name: Yup.string()
-      .trim()
-      .required('Name is required')
-      .matches(/^[A-Za-z\s]+$/, 'Name can only contain letters and spaces')
-      .min(3, 'Name is too short')
-      .max(50, 'Name is too long'),
-    email: Yup.string().required('Email is required').email('Invalid email'),
-    bookingDate: Yup.date()
-      .nullable()
-      .required('Booking date is required')
-      .min(new Date(), 'Select only future date'),
-    comment: Yup.string().trim().max(500, 'Comment is too long'),
-  });
 
   const mockPostRequest = values => {
     return new Promise(resolve => {
@@ -56,7 +40,7 @@ const BookingForm = () => {
       </p>
       <Formik
         initialValues={initialValues}
-        validationSchema={ValidationSchema}
+        validationSchema={BookingSchema}
         onSubmit={handleSubmit}
       >
         {({ values, setFieldValue, isSubmitting, errors, touched }) => (

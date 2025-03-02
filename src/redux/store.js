@@ -11,8 +11,8 @@ import {
 } from 'redux-persist';
 import { carsReducer } from './cars/slice';
 import { favoritesReducer } from './favorites/slice';
-import storage from 'redux-persist/lib/storage';
 import { filtersReducer } from './filters/slice';
+import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
   key: 'favorites',
