@@ -7,6 +7,7 @@ import CarList from '../../components/CarList/CarList';
 import Filter from '../../components/Filter/Filter';
 import LoadMoreBtn from '../../components/LoadMoreBtn/LoadMoreBtn';
 import css from './CatalogPage.module.css';
+import { ClipLoader } from 'react-spinners';
 
 const CatalogPage = () => {
   const dispatch = useDispatch();
@@ -36,7 +37,11 @@ const CatalogPage = () => {
     <section className={css.catalog}>
       <Filter />
       <CarList />
-      {isLoading && <p>Loading...</p>}
+      {isLoading && (
+        <div className={css.loaderWrapper}>
+          <ClipLoader color="#3470ff" loading={isLoading} size={50} />
+        </div>
+      )}
       <div className={css.btnWrapper}>
         {cars.length < totalCars && !isLoading && (
           <LoadMoreBtn onClick={handleLoadMore} />

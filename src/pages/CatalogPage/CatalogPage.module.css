@@ -2,3 +2,9 @@
   display: flex;
   justify-content: center;
 }
+
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
