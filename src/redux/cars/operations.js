@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { buildParams } from '../../utils/utils';
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://car-rental-api.goit.global';
@@ -7,12 +8,7 @@ export const fetchAllCars = createAsyncThunk(
   'cars/fetchAll',
   async (filters, thunkApi) => {
     try {
-      const params = {};
-      if (filters.brand) params.brand = filters.brand;
-      if (filters.rentalPrice) params.rentalPrice = filters.rentalPrice;
-      if (filters.mileageFrom) params.minMileage = filters.mileageFrom;
-      if (filters.mileageTo) params.maxMileage = filters.mileageTo;
-
+      const params = buildParams(filters);
       const { data } = await axios.get('/cars', { params });
       return data.cars;
     } catch (error) {

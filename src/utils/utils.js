@@ -10,3 +10,12 @@ export const formatMileage = mileage => {
 export const shortenId = (id, length = 4) => {
   return id.slice(0, length);
 };
+
+export const buildParams = filters => {
+  const params = {};
+  if (filters.brand) params.brand = filters.brand;
+  if (filters.rentalPrice) params.rentalPrice = filters.rentalPrice;
+  if (filters.mileageFrom) params.minMileage = filters.mileageFrom;
+  if (filters.mileageTo) params.maxMileage = filters.mileageTo;
+  return params;
+};
