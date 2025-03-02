@@ -5,6 +5,21 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-gray-light);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+  }
+
   --color-main: #101828;
   --color-gray: #8d929a;
   --color-gray-light: #dadde1;

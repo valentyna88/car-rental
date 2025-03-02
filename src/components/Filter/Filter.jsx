@@ -1,10 +1,10 @@
 import { Field, Form, Formik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { setFilter } from '../../redux/filters/slice.js';
+import { setFilters } from '../../redux/filters/slice.js';
 import { fetchAllCars, fetchBrands } from '../../redux/cars/operations';
 import { selectBrands, selectCars } from '../../redux/cars/selectors.js';
-import { selectFilter } from '../../redux/filters/selectors.js';
+// import { selectFilters } from '../../redux/filters/selectors.js';
 import * as Yup from 'yup';
 import sprite from '../../assets/icons/sprite.svg';
 import css from './Filter.module.css';
@@ -12,7 +12,7 @@ import css from './Filter.module.css';
 const Filter = () => {
   const dispatch = useDispatch();
   const brands = useSelector(selectBrands);
-  const filter = useSelector(selectFilter);
+  // const filters = useSelector(selectFilters);
   const cars = useSelector(selectCars);
 
   const [showBrandDropdown, setShowBrandDropdown] = useState(false);
@@ -46,19 +46,16 @@ const Filter = () => {
     dispatch(fetchBrands());
   }, [dispatch]);
 
-  useEffect(() => {
-    dispatch(fetchAllCars(filter));
-  }, [dispatch, filter]);
-
   const handleSubmit = values => {
-    dispatch(
-      setFilter({
-        brand: selectedBrand || values.brand,
-        rentalPrice: selectedPrice || values.rentalPrice,
-        mileageFrom: values.mileageFrom ? Number(values.mileageFrom) : '',
-        mileageTo: values.mileageTo ? Number(values.mileageTo) : '',
-      })
-    );
+    const newFilters = {
+      brand: selectedBrand || values.brand,
+      rentalPrice: selectedPrice || values.rentalPrice,
+      mileageFrom: values.mileageFrom ? Number(values.mileageFrom) : '',
+      mileageTo: values.mileageTo ? Number(values.mileageTo) : '',
+    };
+
+    dispatch(setFilters(newFilters));
+    dispatch(fetchAllCars({ page: 1, filters: newFilters, reset: true }));
   };
 
   const uniquePrices = [...new Set(cars.map(car => car.rentalPrice))].sort(
