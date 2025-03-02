@@ -1,79 +1,63 @@
 .formSection {
-  border: 1px solid #dadde1;
+  border: 1px solid var(--color-gray-light);
   border-radius: 10px;
   padding: 32px;
   width: 640px;
   margin-top: 40px;
   margin-bottom: 104px;
 }
-
 .title {
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  color: #101828;
+  color: var(--color-main);
   margin-bottom: 8px;
 }
-
 .text {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #8d929a;
+  color: var(--color-gray);
   margin-bottom: 24px;
 }
-
 .form {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
-
 .field {
   border-radius: 12px;
   padding: 12px 20px;
-  background-color: #f7f7f7;
+  background-color: var(--color-inputs);
   border: 1px solid transparent;
   width: 100%;
 }
-
 .field::placeholder {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #8d929a;
+  color: var(--color-gray);
 }
-
 .lastField {
   margin-bottom: 8px;
   outline: none;
   min-height: 88px;
 }
-
 .errorMessage {
-  color: #ef5050;
+  color: var(--color-error-message);
   font-size: 14px;
   margin-top: 5px;
 }
-
 .fieldError {
-  border-color: #ef5050;
-  color: #ef5050;
+  border-color: var(--color-error-message);
+  color: var(--color-error-message);
 }
-
 .formBtn {
   border-radius: 12px;
   padding: 12px 51px;
   width: 156px;
-  background-color: #3470ff;
+  background-color: var(--color-button);
   font-weight: 600;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #ffffff;
+  color: var(--color-white);
   margin: 0 auto;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition);
 }
-
 .formBtn:hover {
-  background-color: #0b44cd;
+  background-color: var(--color-button-hover);
 }

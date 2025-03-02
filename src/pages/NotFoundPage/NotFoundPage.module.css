@@ -5,32 +5,27 @@
   align-items: center;
   height: 100vh;
   text-align: center;
-  background-color: #f2f4f7;
+  background-color: var(--color-badges);
 }
-
 .title {
   font-size: 3rem;
-  font-weight: bold;
   margin: 0;
-  color: #0b44cd;
+  color: var(--color-button-hover);
 }
-
 .message {
   font-size: 1.5rem;
   margin: 16px 0;
-  color: #666;
+  color: var(--color-gray);
 }
-
 .link {
   display: inline-block;
   padding: 12px 24px;
   margin-top: 24px;
-  color: #0b44cd;
+  color: var(--color-button-hover);
   text-decoration: underline;
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 700;
 }
-
 .link:hover {
-  color: #3470ff;
+  color: var(--color-button);
 }

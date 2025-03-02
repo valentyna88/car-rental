@@ -1,11 +1,10 @@
 .loadMoreBtn {
-  border: 1px solid #3470ff;
+  border: 1px solid var(--color-button);
   border-radius: 12px;
   padding: 12px 51px;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 125%;
-  color: #101828;
+  line-height: 1.25;
+  color: var(--color-main);
   margin-bottom: 124px;
   background-color: transparent;
 }

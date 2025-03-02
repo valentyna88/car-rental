@@ -6,86 +6,68 @@
   gap: 16px;
   margin-top: 84px;
 }
-
 .formGroup {
   display: flex;
   flex-direction: column;
 }
-
 .label {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
-  color: #8d929a;
+  color: var(--color-gray);
   margin-bottom: 8px;
 }
-
 .select {
   padding: 12px 16px;
   height: 44px;
   border-radius: 12px;
   background-color: #f7f7f7;
-  font-size: 16px;
-  outline: none;
   border: none;
 }
-
 .selectWrapper {
   display: flex;
 }
-
 .inputContainer {
   position: relative;
 }
-
 .inputLabel {
   position: absolute;
   top: 50%;
   left: 10px;
   transform: translateY(-50%);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #101828;
+  color: var(--color-main);
   pointer-events: none;
 }
-
 .selectFrom {
-  border-right: 1px solid #dadde1;
+  border-right: 1px solid var(--color-gray-light);
   border-radius: 12px 0 0 12px;
   width: 160px;
   padding-left: 52px;
 }
-
 .selectTo {
   border-radius: 0 12px 12px 0;
   width: 160px;
   padding-left: 32px;
 }
-
 .select:focus + .inputLabel,
 .select:not(:placeholder-shown) + .inputLabel {
   font-size: 10px;
   top: -5px;
 }
-
 .searchBtn {
   border-radius: 12px;
   padding: 12px 51px;
   width: 156px;
-  background-color: #3470ff;
+  background-color: var(--color-button);
   font-weight: 600;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #ffffff;
+  color: var(--color-white);
   align-self: flex-end;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition);
 }
-
 .searchBtn:hover {
-  background-color: #0b44cd;
+  background-color: var(--color-button-hover);
 }
-
 .customSelect {
   position: relative;
   width: 100%;
@@ -93,41 +75,37 @@
   display: flex;
   justify-content: space-between;
 }
-
 .selectedOption {
   padding: 12px 16px;
   width: 196px;
   height: 44px;
   border-radius: 12px;
-  background-color: #f7f7f7;
-  font-size: 16px;
+  background-color: var(--color-inputs);
   outline: none;
   display: flex;
   align-items: center;
 }
-
 .dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: var(--color-white);
   border-radius: 12px;
-  border: 1px solid #dadde1;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-inputs);
+  box-shadow: 0 4px 36px 0 rgba(0, 0, 0, 0.02);
   z-index: 10;
+  max-height: 272px;
+  overflow-y: auto;
 }
-
 .option {
-  padding: 12px 16px;
+  padding: 8px 16px;
   cursor: pointer;
-  font-size: 16px;
+  color: var(--color-gray);
 }
-
 .option:hover {
-  background-color: #f7f7f7;
+  color: var(--color-main);
 }
-
 .icon {
   position: absolute;
   top: 50%;
@@ -137,9 +115,8 @@
   align-items: center;
   justify-content: center;
 }
-
 .iconChevron {
   width: 16px;
   height: 16px;
-  fill: #101828;
+  fill: var(--color-main);
 }

@@ -5,73 +5,57 @@
   border-radius: 14px;
   overflow: hidden;
 }
-
 .carImage {
   border-radius: 14px;
   width: 276px;
   height: 268px;
 }
-
 .heartIcon {
   position: absolute;
   top: 16px;
   right: 16px;
 }
-
 .info {
   display: flex;
   flex-direction: column;
   margin-top: 16px;
 }
-
 .titleBox {
   display: flex;
   justify-content: space-between;
   align-items: start;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #101828;
+  color: var(--color-main);
 }
-
 .model {
-  color: #3470ff;
+  color: var(--color-button);
 }
-
 .price {
   margin-right: 12px;
 }
-
 .location {
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
-  color: #8d929a;
+  color: var(--color-gray);
   margin-top: 8px;
 }
-
 .details {
   margin-top: 4px;
-  font-weight: 400;
   font-size: 12px;
   line-height: 1.33;
-  color: #8d929a;
+  color: var(--color-gray);
 }
-
 .link {
   display: block;
   text-align: center;
   margin-top: 28px;
-  background-color: #3470ff;
-  color: #fff;
+  background-color: var(--color-button);
+  color: var(--color-white);
   border-radius: 12px;
   padding: 12px 99px;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 1.25;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition);
 }
-
 .link:hover {
-  background-color: #0b44cd;
+  background-color: var(--color-button-hover);
 }

@@ -4,91 +4,71 @@
   width: 488px;
   margin: 104px 0;
 }
-
 .mainDetails {
   display: flex;
   flex-direction: column;
   margin-bottom: 68px;
 }
-
 .titleContainer {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 8px;
 }
-
 .title {
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
-  color: #101828;
+  color: var(--color-main);
 }
-
 .id {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #8d929a;
+  color: var(--color-gray);
 }
-
 .locationMileageContainer {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-bottom: 16px;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #101828;
+  color: var(--color-main);
 }
-
 .locationContainer {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-
 .price {
   margin-bottom: 32px;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.33;
-  color: #3470ff;
+  color: var(--color-button);
 }
-
 .description {
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #101828;
+  color: var(--color-main);
 }
-
 .detailsSection {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
-
 .listTitle {
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  color: #101828;
+  color: var(--color-main);
   margin-bottom: 20px;
 }
-
 .detailsItem {
   display: flex;
   align-items: center;
   gap: 8px;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  color: #101828;
+  color: var(--color-main);
   margin-bottom: 16px;
 }
-
 .icon {
   width: 16px;
   height: 16px;
