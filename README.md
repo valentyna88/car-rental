@@ -104,3 +104,11 @@ Contributions are welcome! If you'd like to contribute to this project:
 ## License
 
 This project is open-source and available under the MIT License.
+
+## Author
+
+Valentyna Taranchuk – Full Stack Developer
+
+- GitHub: https://github.com/valentyna88
+
+- Gmail: valyataranchuk8@gmail.com
