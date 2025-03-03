@@ -7,16 +7,11 @@ export const formatDistance = mileage => {
   return mileage.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 };
 
-export const formatMileage = value => {
-  return value
-    .toString()
-    .replace(/\D/g, '')
-    .replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-};
+export const formatMileage = value =>
+  value ? value.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
 
 export const handleMileageChange = (e, setFieldValue, fieldName) => {
-  const formattedValue = formatMileage(e.target.value);
-  setFieldValue(fieldName, formattedValue);
+  setFieldValue(fieldName, e.target.value.replace(/\D/g, ''));
 };
 
 export const shortenId = (id, length = 4) => {
