@@ -8,7 +8,7 @@ export const formatDistance = mileage => {
 };
 
 export const formatMileage = value =>
-  value ? value.replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
+  value ? value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') : '';
 
 export const handleMileageChange = (e, setFieldValue, fieldName) => {
   setFieldValue(fieldName, e.target.value.replace(/\D/g, ''));
