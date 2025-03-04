@@ -1,4 +1,6 @@
-# Rental Car
+# 🚗 Rental Car
+
+![Rental Car](/src/assets/images/bg-image@1x.jpg)
 
 ## Project Description
 
