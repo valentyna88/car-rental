@@ -134,7 +134,7 @@ const Filter = () => {
                         className={css.option}
                         onClick={() => handlePriceSelect(price, setFieldValue)}
                       >
-                        To ${price}
+                        {price}
                       </div>
                     ))}
                   </div>
